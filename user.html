@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Complaint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 420px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Submit Complaint</h2>
+
+    <form action="submit_complaint.php" method="POST" enctype="multipart/form-data">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="text" name="area" placeholder="Area" required>
+
+        <input type="text" name="ward_number" placeholder="Ward Number" required>
+
+        <select name="department" required>
+            <option value="">Select Department</option>
+            <option value="Water">Water</option>
+            <option value="Road">Road</option>
+            <option value="Sanitation">Sanitation</option>
+            <option value="Electricity">Electricity</option>
+        </select>
+
+        <textarea name="description" rows="4" placeholder="Complaint Description" required></textarea>
+
+        <label>Upload Photo:</label>
+        <input type="file" name="photo" accept="image/*">
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</div>
+
+</body>
+</html>
